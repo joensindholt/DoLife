@@ -1,0 +1,36 @@
+{
+  "name": "goteamup-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for the GoTeamUp project",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joensindholt/goteamup.git/frontend"
+  },
+  "author": "Joen Sindholt",
+  "license": "ISC",
+  "devDependencies": {
+    "cli-table": "^0.3.1",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^2.3.1",
+    "gulp-help": "^1.6.1",
+    "gulp-if": "^2.0.0",
+    "gulp-sass": "^2.1.1",
+    "gulp-typescript": "^2.10.0",
+    "gulp-uglify": "^1.5.1",
+    "jasmine": "^2.4.1",
+    "karma": "^0.13.19",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.6",
+    "lodash": "^4.0.0",
+    "path": "^0.12.7",
+    "yargs": "^3.32.0"
+  },
+  "dependencies": {
+    "gulp-cssmin": "^0.1.7"
+  }
+}

@@ -1,0 +1,17 @@
+<h1>Kampe</h1>
+<md-content layout-padding>
+    <md-list>
+        <md-list-item ng-repeat="event in vm.events" class="md-offset">
+            <button class="md-no-style md-button md-ink-ripple" type="button" ng-click="vm.openEvent(event, $event)" aria-label="{{event.name}}">
+                <div class="md-list-item-inner ng-scope">
+                    <p class="ng-binding">{{event.title}}</p>
+                </div>
+                <div ng-click="vm.deleteEvent(event, $event)" aria-label="Slet kamp" class="md-secondary md-hue-3">Slet</div>
+                <div class="md-ripple-container">
+                </div>
+            </button>
+        </md-list-item>
+    </md-list>
+</md-content>
+
+<a ui-sref="addevent">Opret ny kamp</a>

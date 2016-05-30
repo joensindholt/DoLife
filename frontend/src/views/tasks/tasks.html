@@ -1,0 +1,17 @@
+<h1>Opgaver</h1>
+<md-content layout-padding>
+    <md-list>
+        <md-list-item ng-repeat="task in vm.tasks" class="md-offset">
+            <button class="md-no-style md-button md-ink-ripple" type="button" ng-click="vm.openTask(task, $task)" aria-label="{{task.name}}">
+                <div class="md-list-item-inner ng-scope">
+                    <p class="ng-binding">{{task.title}}</p>
+                </div>
+                <div ng-click="vm.deleteTask(task, $task)" aria-label="Slet opgave" class="md-secondary md-hue-3">Slet</div>
+                <div class="md-ripple-container">
+                </div>
+            </button>
+        </md-list-item>
+    </md-list>
+</md-content>
+
+<a ui-sref="addtask">Opret ny opgave</a>
