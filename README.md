@@ -10,7 +10,7 @@ Database: Amazon DynamoDB
 
 ### Backend
 
-Before running the backend add aws credentials (supplied via different channel) in `api/src/aws.config.json`.
+Before running the backend add aws credentials (supplied via different channel) in `api/src/aws.config.json`. The file does not exists so you'll have to create it yourself.
 
 ```
 {
