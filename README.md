@@ -25,6 +25,6 @@ Then start the server:
 
 ```
 cd api
-npm build
+npm install
 npm start
 ```
