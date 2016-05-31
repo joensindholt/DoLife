@@ -28,3 +28,9 @@ cd api
 npm install
 npm start
 ```
+
+A succesfull start should show:
+
+```
+Server listening at: http://localhost:8888
+```
