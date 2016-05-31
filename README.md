@@ -1,16 +1,28 @@
-# Min klub
+# Do Life
 
-## Install
+Simple todo app with:
 
-### Frontend
-`cd frontend`
-`npm install`, `bower install`, `tsd install -so`
-`cd src`, `gulp watch`
+Frontend: AngularJS
+Backend: Express
+Database: Amazon DynamoDB
 
 ### API
-`cd api`
-`npm run build`
 
-## Run
+Before running the api add aws credentials in `api/src/aws.config.json`. Create the file yourself.
 
-`cd api`, `npm start`
+```
+{
+    "region": "eu-west-1",
+    "endpoint": "https://dynamodb.eu-west-1.amazonaws.com",
+    "accessKeyId": "{accessKeyId}",
+    "secretAccessKey": "{secretAccessKey}"
+}
+```
+
+Then start the server:
+
+```
+cd api
+npm build
+npm start
+```
