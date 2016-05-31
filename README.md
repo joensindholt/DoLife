@@ -8,7 +8,7 @@ Backend: Express
 
 Database: Amazon DynamoDB
 
-### API
+### Backend
 
 Before running the api add aws credentials in `api/src/aws.config.json`. Create the file yourself.
 
