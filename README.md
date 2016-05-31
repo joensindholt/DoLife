@@ -3,7 +3,9 @@
 Simple todo app with:
 
 Frontend: AngularJS
+
 Backend: Express
+
 Database: Amazon DynamoDB
 
 ### API
