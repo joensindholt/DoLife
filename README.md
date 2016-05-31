@@ -4,13 +4,13 @@ Simple todo app with:
 
 Frontend: AngularJS
 
-Backend: Express
+Backend: Web Api using Express
 
 Database: Amazon DynamoDB
 
 ### Backend
 
-Before running the api add aws credentials in `api/src/aws.config.json`. Create the file yourself.
+Before running the backend add aws credentials in `api/src/aws.config.json`. Create the file yourself.
 
 ```
 {
