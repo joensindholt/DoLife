@@ -56,7 +56,7 @@ class TaskRepository {
                     return;
                 }
 
-                resolve(data);
+                resolve(task);
             });
         });
 

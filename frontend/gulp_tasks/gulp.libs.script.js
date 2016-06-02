@@ -2,12 +2,21 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var gulpif = require('gulp-if');
 
-module.exports = function(gulp, settings, config){
+module.exports = function(gulp, settings, config) {
 
-	gulp.task('libs.script', 'Process the scripts from the external libs' , function() {
+    gulp.task('libs.script', 'Process the scripts from the external libs', function() {
         return gulp.src(config.libs.script)
-			.pipe(concat('libs.js'))
-			.pipe(gulpif(settings.production, uglify()))
-			.pipe(gulp.dest('js/', { cwd: config.dist }));
-	});
+            .pipe(concat('libs.js'))
+            .pipe(gulpif(settings.production, uglify()))
+            .pipe(gulp.dest('js/', {
+                cwd: config.dist
+            }));
+    });
+
+    gulp.task('libs.fonts', 'Copy libs fonts to output dir', function() {
+        return gulp.src(config.libs.fonts)
+            .pipe(gulp.dest('fonts/', {
+                cwd: config.dist
+            }));
+    });
 };

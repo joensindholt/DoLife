@@ -1,0 +1,16 @@
+$footer-color: #ccc;
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    color: $footer-color;
+    line-height: 40px;
+
+    a {
+        color: $footer-color;
+        text-decoration: underline;
+    }
+}

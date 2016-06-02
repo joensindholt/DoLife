@@ -1,0 +1,45 @@
+$primary-color: #f57e7e;
+$primary-color: #00b2b2;
+
+body {
+    background: white;
+    padding-top: 70px;
+    padding-bottom: 40px;
+    font-weight: 300;
+}
+
+i.fa {
+    font-size: 1.5em;
+    color: #666;
+    font-weight: 300;
+}
+
+.button {
+    border-radius: 3px;
+    background: $primary-color;
+    color: white;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: darken($primary-color, 5%);
+    text-decoration: none;
+    color: white;
+}
+
+.button:active {
+    box-shadow: inset 1px 1px 3px darken($primary-color, 10%);
+}
+.area {
+    margin-bottom: 30px;
+    .area__title {
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-size: 0.8em;
+        margin-bottom: 10px;
+    }
+}

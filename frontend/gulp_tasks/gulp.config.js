@@ -7,13 +7,10 @@ module.exports = {
 	app: {
         base: globalPath.app,
         html: [
-            globalPath.app+"index.html"
+            globalPath.app+"**/*.html"
         ],
         sass:[
             globalPath.app+'**/*.scss'
-        ],
-        partials: [
-            globalPath.app+"**/*.html"
         ],
         img: [
             globalPath.app+"img/**/*",
@@ -30,19 +27,21 @@ module.exports = {
     },
     libs: {
         script:[
+            globalPath.bower+'jquery/dist/jquery.min.js',
             globalPath.bower+'angular/angular.js',
             globalPath.bower+'angular-route/angular-route.js',
             globalPath.bower+'angular-ui-router/release/angular-ui-router.js',
             globalPath.bower+'angular-aria/angular-aria.js',
             globalPath.bower+'angular-animate/angular-animate.js',
-            globalPath.bower+'angular-material/angular-material.js',
-            globalPath.bower+'angular-media-queries/match-media.js',
-            globalPath.bower+'lodash/dist/lodash.min.js'
+            globalPath.bower+'lodash/dist/lodash.min.js',
+            globalPath.bower+'bootstrap/dist/js/bootstrap.min.js'
         ],
         css:[
-            globalPath.bower+'angular-material/angular-material.css'
+            globalPath.bower+'bootstrap/dist/css/bootstrap.min.css',
+            globalPath.bower+'font-awesome/css/font-awesome.min.css'
         ],
         fonts: [
+            globalPath.bower+'font-awesome/fonts/*.*'
         ],
         sass:[
         ]

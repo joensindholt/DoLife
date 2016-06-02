@@ -1,11 +1,11 @@
 {
-  "name": "goteamup-frontend",
-  "description": "Frontend for the GoTeamUp project",
+  "name": "Do Life - Frontend",
+  "description": "Frontend for the Do Life project",
   "authors": [
     "Joen Sindholt"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/joensindholt/goteamup",
+  "homepage": "https://github.com/joensindholt/dolife",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -14,14 +14,14 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.4.9",
-    "angular-route": "~1.4.9",
-    "angular-material": "~1.0.3",
-    "angular-ui-router": "~0.2.17",
-    "lodash": "~4.1.0",
-    "angular-media-queries": "~0.6.0"
+    "angular": "~1.5.6",
+    "angular-route": "~1.5.6",
+    "angular-ui-router": "~0.3.0",
+    "lodash": "^4.13.1",
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.6.3"
   },
   "devDependencies": {
-    "angular-mocks": "~1.4.9"
+    "angular-mocks": "~1.5.6"
   }
 }

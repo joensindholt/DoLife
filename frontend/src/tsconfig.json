@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "out": "dist/js/main.js",
+        "out": "dist/js/app.js",
         "target": "es5"
     }
 }
