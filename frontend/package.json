@@ -1,7 +1,7 @@
 {
-  "name": "goteamup-frontend",
+  "name": "dolife",
   "version": "1.0.0",
-  "description": "Frontend for the GoTeamUp project",
+  "description": "Frontend for the Do Life project",
   "main": "index.js",
   "scripts": {
     "build": "npm install && bower install && tsd reinstall -so",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/joensindholt/goteamup.git/frontend"
+    "url": "https://github.com/joensindholt/dolife"
   },
   "author": "Joen Sindholt",
   "license": "ISC",

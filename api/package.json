@@ -1,7 +1,7 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "api for the minklub.dk project",
+  "description": "api for the DoLife project",
   "main": "index.js",
   "scripts": {
     "start": "node src/server.js",
