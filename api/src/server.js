@@ -5,11 +5,24 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const AWS = require('aws-sdk');
 const cors = require('cors');
+const fs = require('fs');
+const colors = require('colors');
 
 const Routes = require('./routes');
 
 // Load AWS configuration
-AWS.config.loadFromPath('./src/aws.config.json');
+const awsConfigPath = './src/aws.config.json';
+try {
+    AWS.config.loadFromPath(awsConfigPath);
+}
+catch(err) {
+    if (err.code === 'ENOENT') {
+        console.error(`ERROR: Could not load AWS configuration from ${awsConfigPath}. Did you follow the guide in the Github Readme?`.red);
+        return;
+    } else {
+        throw err;
+    }
+}
 
 // Initialize express
 let app = express();

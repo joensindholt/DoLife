@@ -2,15 +2,15 @@
 
 Simple todo app with:
 
-Frontend: AngularJS
+- Frontend: AngularJS using npm, bower, gulp, typescript
 
-Backend: Web Api using Express
+- Backend: Json api using Express on Node
 
-Database: Amazon DynamoDB
+- Database: Amazon DynamoDB
 
 ### Backend
 
-Before running the backend add aws credentials (supplied via different channel) in `api/src/aws.config.json`. The file does not exists so you'll have to create it yourself.
+Before running the backend you must add AWS credentials (supplied via different channel) in `api/src/aws.config.json`. The file does not exists so you'll have to create it yourself.
 
 ```
 {
@@ -29,8 +29,24 @@ npm install
 npm start
 ```
 
-A succesfull start should show:
+A succesful start should show
 
 ```
 Server listening at: http://localhost:8888
 ```
+
+...in the terminal.
+
+### Frontend
+
+Build and run the frontend by running:
+
+```
+cd frontend
+npm run build
+npm start
+```
+
+Then open a browser at `http://localhost:8000`
+
+If all is well you should see the app running and a couple of tasks already added.

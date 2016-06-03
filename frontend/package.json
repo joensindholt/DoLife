@@ -4,6 +4,8 @@
   "description": "Frontend for the GoTeamUp project",
   "main": "index.js",
   "scripts": {
+    "build": "npm install && bower install && tsd reinstall -so",
+    "start": "gulp serve",
     "test": "npm test"
   },
   "repository": {

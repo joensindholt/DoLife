@@ -17,6 +17,7 @@
   "dependencies": {
     "aws-sdk": "^2.3.16",
     "body-parser": "^1.14.2",
+    "colors": "^1.1.2",
     "cors": "^2.7.1",
     "express": "^4.13.4",
     "kerberos": "0.0.18",

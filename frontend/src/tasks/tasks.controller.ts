@@ -7,18 +7,25 @@ module Tasks {
 
         newTaskTitle: string;
         allTasks: Array<Task>;
+        errorMessage: string;
+        loading: boolean;
 
-        static $inject = ['TasksService'];
+        static $inject = ['$timeout', 'TasksService'];
 
         constructor(
+            private $timeout: ng.ITimeoutService,
             private TasksService: TasksService
         ) {
-            this.TasksService.getTasks().then(tasks => {
-                this.allTasks = tasks;
-            }).catch(err => {
-                // TODO: Handle error nicer
-                console.error(err);
-            });
+            this.loading = true;
+
+            this.TasksService.getTasks()
+                .then(tasks => {
+                    this.allTasks = tasks;
+                    this.loading = false;
+                }).catch(err => {
+                    this.loading = false;
+                    this.showError('We could not get your tasks from server', err);
+                });
         }
 
         get tasks() {
@@ -37,11 +44,13 @@ module Tasks {
 
             this.newTaskTitle = '';
 
-            this.TasksService.addTask(title).then(task => {
-                this.allTasks.push(task);
-            }).catch(err => {
-                _.remove(this.allTasks, {taskId: 'new'});
-            });
+            this.TasksService.addTask(title)
+                .then(task => {
+                    this.allTasks.push(task);
+                }).catch(err => {
+                    _.remove(this.allTasks, {taskId: 'new'});
+                    this.showError('We could not add your tasks', err);
+                });
         }
 
         handleNewTaskTitleKeyDown(event) {
@@ -52,33 +61,39 @@ module Tasks {
 
         markTaskComplete(task: Task) {
             task.taskStatus = 'complete';
-            this.TasksService.updateStatus(task.taskId, 'complete').catch(err => {
-                task.taskStatus = 'incomplete';
-                // TODO: Handle error nicer
-                console.error(err);
-            });
+            this.TasksService.updateStatus(task.taskId, 'complete')
+                .catch(err => {
+                    task.taskStatus = 'incomplete';
+                    this.showError('We could not complete your task', err);
+                });
         }
 
         markTaskIncomplete(task: Task) {
             task.taskStatus = 'incomplete';
-            this.TasksService.updateStatus(task.taskId, 'incomplete').catch(err => {
-                task.taskStatus = 'complete';
-                // TODO: Handle error nicer
-                console.error(err);
-            });
+            this.TasksService.updateStatus(task.taskId, 'incomplete')
+                .catch(err => {
+                    task.taskStatus = 'complete';
+                    this.showError('We could not mark you task as incomplete', err);
+                });
         }
 
         deleteTask(task: Task) {
-            // TODO: Do undo functionality
             _.remove(this.allTasks, { taskId: task.taskId });
 
-            this.TasksService.deleteTask(task.taskId).then(() => {
-                // TODO show saved
-            }).catch(err => {
-                this.allTasks.push(task);
-                // TODO: Handle error nicer
-                console.error(err);
-            });
+            this.TasksService.deleteTask(task.taskId)
+                .catch(err => {
+                    this.allTasks.push(task);
+                    this.showError('We could delete your task', err);
+                });
+        }
+
+        showError(message: string, error: any) {
+            this.errorMessage = 'Sorry. ' + message + '. There\'s more information in the console';
+            console.log(error);
+
+            this.$timeout(() => {
+                this.errorMessage = null;
+            }, 3000);
         }
     }
 }

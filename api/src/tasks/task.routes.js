@@ -41,7 +41,6 @@ class TaskRoutes {
             let status = req.body.value;
             console.log('status', status);
             this.taskRepository.updateTaskStatus(req.userId, taskId, status).then(() => {
-                // TODO: Maybe do 303 response with task location '/tasks'
                 res.status(200).send();
             }).catch(err => {
                 console.error('ERROR', err);

@@ -1,49 +1,55 @@
-<div class="area">
-    <div class="area__title">Add a new task:</div>
-    <div class="new-task">
-        <div class="new-task__title">
-            <input type="text" ng-model="vm.newTaskTitle" ng-keydown="vm.handleNewTaskTitleKeyDown($event)" class="new-task__title__input" />
-        </div>
-        <a class="button" ng-click="vm.addTask(vm.newTaskTitle)">Add task</a>
-    </div>
+<div ng-show="vm.errorMessage" class="alert alert-danger" role="alert">
+    {{vm.errorMessage}}
 </div>
 
-<div class="area">
-    <div class="area__title">Your tasks:</div>
-    <div ng-show="vm.tasks.length === 0">
-        Congrats...you're all done
+<div ng-hide="vm.loading">
+    <div class="area">
+        <div class="area__title">Add a new task:</div>
+        <div class="new-task">
+            <div class="new-task__title">
+                <input type="text" ng-model="vm.newTaskTitle" ng-keydown="vm.handleNewTaskTitleKeyDown($event)" class="new-task__title__input" />
+            </div>
+            <a class="button" ng-click="vm.addTask(vm.newTaskTitle)">Add task</a>
+        </div>
     </div>
-    <div ng-repeat="task in vm.tasks | orderBy: 'taskStatus' : true">
-        <div class="task" ng-class="{'task--complete' : task.taskStatus === 'complete'}">
-            <div class="task__status">
-                <i ng-show="task.taskStatus === 'incomplete'" class="fa fa-square-o" aria-hidden="true" ng-click="vm.markTaskComplete(task)" title="Click to mark the task complete"></i>
-            </div>
-            <div class="task__actions">
-                <div class="task__delete">
-                    <i class="fa fa-trash-o" aria-hidden="true" ng-click="vm.deleteTask(task)" title="Click to delete task"></i>
+
+    <div class="area">
+        <div class="area__title">Your tasks:</div>
+        <div ng-show="vm.tasks.length === 0">
+            Congrats...you're all done
+        </div>
+        <div ng-repeat="task in vm.tasks | orderBy: 'taskStatus' : true">
+            <div class="task" ng-class="{'task--complete' : task.taskStatus === 'complete'}">
+                <div class="task__status">
+                    <i ng-show="task.taskStatus === 'incomplete'" class="fa fa-square-o" aria-hidden="true" ng-click="vm.markTaskComplete(task)" title="Click to mark the task complete"></i>
                 </div>
-            </div>
-            <div class="task__title">
-                {{task.title}}
+                <div class="task__actions">
+                    <div class="task__delete">
+                        <i class="fa fa-trash-o" aria-hidden="true" ng-click="vm.deleteTask(task)" title="Click to delete task"></i>
+                    </div>
+                </div>
+                <div class="task__title">
+                    {{task.title}}
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="area" ng-show="vm.completedTasks.length > 0">
-    <div class="area__title">Completed tasks:</div>
-    <div ng-repeat="task in vm.completedTasks">
-        <div class="task task--complete">
-            <div class="task__status">
-                <i ng-show="task.taskStatus === 'complete'" class="fa fa-check-square-o" aria-hidden="true" ng-click="vm.markTaskIncomplete(task)" title="Click to mark the task incomplete"></i>
-            </div>
-            <div class="task__actions">
-                <div class="task__delete">
-                    <i class="fa fa-trash-o" aria-hidden="true" ng-click="vm.deleteTask(task)" title="Click to delete task"></i>
+    <div class="area" ng-show="vm.completedTasks.length > 0">
+        <div class="area__title">Completed tasks:</div>
+        <div ng-repeat="task in vm.completedTasks">
+            <div class="task task--complete">
+                <div class="task__status">
+                    <i ng-show="task.taskStatus === 'complete'" class="fa fa-check-square-o" aria-hidden="true" ng-click="vm.markTaskIncomplete(task)" title="Click to mark the task incomplete"></i>
                 </div>
-            </div>
-            <div class="task__title">
-                {{task.title}}
+                <div class="task__actions">
+                    <div class="task__delete">
+                        <i class="fa fa-trash-o" aria-hidden="true" ng-click="vm.deleteTask(task)" title="Click to delete task"></i>
+                    </div>
+                </div>
+                <div class="task__title">
+                    {{task.title}}
+                </div>
             </div>
         </div>
     </div>

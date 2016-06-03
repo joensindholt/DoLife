@@ -6,7 +6,7 @@ module.exports = function(gulp, settings, config, connect) {
         var serveStatic = require('serve-static');
         var compression = require('compression');
 
-        gulp.task('serve', 'Run a static Node.js server for development on port ' + settings.port, function() {
+        gulp.task('serve', 'Run a static Node.js server for development on port ' + settings.port, ['default'], function() {
             var app = express();
             app.use(compression());
             app.use(serveStatic(config.dist));
@@ -16,7 +16,7 @@ module.exports = function(gulp, settings, config, connect) {
             return gulp.src(config.dist);
         });
     } else {
-        gulp.task('serve', 'Run a static Node.js server for development on port ' + settings.port, function() {
+        gulp.task('serve', 'Run a static Node.js server for development on port ' + settings.port, ['default'], function() {
             connect.server({
                 port: settings.port,
                 root: config.dist,
