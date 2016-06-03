@@ -12,6 +12,15 @@ Simple todo app with:
 
 - Node v. 4.x. Download at https://nodejs.org/en/
 
+### Get it
+
+Clone the repo by running the following in a terminal
+
+```
+git clone https://github.com/joensindholt/DoLife.git
+cd DoLife
+```
+
 ### Backend
 
 Before running the backend you must add AWS credentials (supplied via different channel) by running the following commands:
