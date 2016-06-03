@@ -8,7 +8,7 @@ if (!accessKeyId || !secretAccessKey) {
     return;
 }
 
-fs.writeFileSync('./src/aws.config.try.json', JSON.stringify({
+fs.writeFileSync('./src/aws.config.json', JSON.stringify({
     "region": "eu-west-1",
     "endpoint": "https://dynamodb.eu-west-1.amazonaws.com",
     "accessKeyId": accessKeyId,
