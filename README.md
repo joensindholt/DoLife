@@ -8,23 +8,22 @@ Simple todo app with:
 
 - Database: Amazon DynamoDB
 
+### Requirements
+
+- Node v. 4.x. Download at https://nodejs.org/en/
+
 ### Backend
 
-Before running the backend you must add AWS credentials (supplied via different channel) in `api/src/aws.config.json`. The file does not exists so you'll have to create it yourself.
+Before running the backend you must add AWS credentials (supplied via different channel) by running the following commands:
 
 ```
-{
-    "region": "eu-west-1",
-    "endpoint": "https://dynamodb.eu-west-1.amazonaws.com",
-    "accessKeyId": "{accessKeyId}",
-    "secretAccessKey": "{secretAccessKey}"
-}
+cd api
+node credgen {accessKeyId} {secretAccessKey}
 ```
 
 Then start the server:
 
 ```
-cd api
 npm install
 npm start
 ```
@@ -43,7 +42,7 @@ Build and run the frontend by running:
 
 ```
 cd frontend
-npm run build
+sudo npm install -g bower && sudo npm install -g tsd && npm run build
 npm start
 ```
 
