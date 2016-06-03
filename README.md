@@ -10,7 +10,8 @@ Simple todo app with:
 
 ### Requirements
 
-- Node v. 4.x. Download at https://nodejs.org/en/
+- Node v. 4.x. Get it here: https://nodejs.org/en/
+- Git. Get it here: https://git-scm.com/downloads
 
 ### Get it
 
